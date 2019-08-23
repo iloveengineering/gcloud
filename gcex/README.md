@@ -3,6 +3,8 @@ gcex is a utility to swich between gcloud configuration and projects
 
 Mac
 - Download the `gcex` script and save it to `/usr/local/bin`
+- run chmod +x gcex to make the file unix executable
+- run gcex to test it.
 
 ```
 Usage:

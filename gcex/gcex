@@ -41,18 +41,21 @@ configurations_list(){
 
 #Function to activate configurations
 configurations_activate(){
-    gcloud config configurations activate "${2}"
+    if [[ "$2" == '' ]]; then
+        echo "enter the configuration name"
+    else
+        gcloud config configurations activate "${2}"
+    fi
 }
 
 #Condition to check the input value
 if [[ "$#" -eq 0 ]]; then
     list_projects
-elif [[ "$1" = '-h' ]]; then
+elif [ "$1" = '-h' ] || [ "$1" = '-help' ]; then
      help
 elif [[ "$1" = '-l' ]]; then
      configurations_list
 elif [[ "$1" = '-a' ]]; then
-     echo "${2}"
     configurations_activate "$@"
 else
     set_projects "${1}"
