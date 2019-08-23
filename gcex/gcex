@@ -10,15 +10,7 @@
 #gcex <name>  : set the project name in the config file
 #gxec -h      : help
 
-#list projects accessible by the active account
-list_projects() {
-gcloud projects list
-}
-
-set_projects() {
-  gcloud config set project "${1}"
-}
-
+#Function to display commands
 help() {
     echo "gcex                      : to list the projects"
     echo "gcex <name>               : set the project name in the gcloud config"
@@ -27,11 +19,41 @@ help() {
     #echo "gcex r               : to list the region"
     #echo "gcex r <name>        : set the region in the gcloud config"
     echo "gxec -h                   : help"
+    echo "gxec -l                   : List gcloud configurations"
+    echo "gxec -a                   : Activate a gcloud configuration"
 }
+
+#Function to list projects accessible by the active account
+list_projects() {
+gcloud projects list
+}
+
+#Function to set project
+set_projects() {
+  gcloud config set project "${1}"
+}
+
+#Function to list configurations
+configurations_list(){
+    gcloud config configurations list
+
+}
+
+#Function to activate configurations
+configurations_activate(){
+    gcloud config configurations activate "${2}"
+}
+
+#Condition to check the input value
 if [[ "$#" -eq 0 ]]; then
     list_projects
 elif [[ "$1" = '-h' ]]; then
      help
+elif [[ "$1" = '-l' ]]; then
+     configurations_list
+elif [[ "$1" = '-a' ]]; then
+     echo "${2}"
+    configurations_activate "$@"
 else
     set_projects "${1}"
 fi
