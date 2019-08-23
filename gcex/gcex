@@ -51,7 +51,7 @@ configurations_activate(){
 #Condition to check the input value
 if [[ "$#" -eq 0 ]]; then
     list_projects
-elif [ "$1" = '-h' ] || [ "$1" = '-help' ]; then
+elif [ "$1" = '-h' ] || [ "$1" = '-help' ] || [ "$1" = '--h' ] || [ "$1" = '--help' ]; then
      help
 elif [[ "$1" = '-l' ]]; then
      configurations_list
