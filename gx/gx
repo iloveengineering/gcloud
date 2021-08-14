@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
 #
 #Author: Anil Narasimhappa
-#Date: 23/08/2019
-#Version: 0.1
+#Date: 14/08/2021
+#Version: 0.2
 #Location: Melbourne, Australia
-#gcex is the utility to set gcloud projects in gcloud config.
+#gx is the utility to set gcloud projects in gcloud config.
 #commands usages:
-#gcex         : to list the gcloud projects
-#gcex <name>  : set the project name in the config file
-#gxec -h      : help
+#gx         : to list the gcloud projects
+#gx <name>  : set the project name in the config file
+#gx -h      : help
 
 #Function to display commands
 help() {
-    echo "gcex                      : to list the projects"
-    echo "gcex <name>               : set the project name in the gcloud config"
-    #echo "gcex z                 : to list the zones"
-    #echo "gcex z <name>          : set the zone in the gcloud config"
-    #echo "gcex r               : to list the region"
-    #echo "gcex r <name>        : set the region in the gcloud config"
-    echo "gxec -h                   : help"
-    echo "gxec -l                   : List gcloud configurations"
-    echo "gxec -a                   : Activate a gcloud configuration"
+    echo "gx                      : to list the projects"
+    echo "gx <name>               : set the project name in the gcloud config"
+    #echo "gx z                 : to list the zones"
+    #echo "gx z <name>          : set the zone in the gcloud config"
+    #echo "gx r               : to list the region"
+    #echo "gx r <name>        : set the region in the gcloud config"
+    echo "gx -h                   : help"
+    echo "gx -l                   : List gcloud configurations"
+    echo "gx -a                   : Activate a gcloud configuration"
 }
 
 #Function to list projects accessible by the active account
